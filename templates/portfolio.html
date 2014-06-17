@@ -45,16 +45,16 @@
     $$items = $$(".items"),
     hider = $$("#clear");
 
+    $$(".container").css("maxWidth",720);
+    $$(".row.items").css("text-align", "center");
+    hider.hide();
+
     $$(".container").imagesLoaded(function () {
         $$items.isotope({
             layoutMode: "fitRows"
-        })
+        });
+        $$(".items").css("visibility", "visible");
     });
-
-    hider.hide();
-
-    $$(".container").css("maxWidth",720);
-    $$(".row.items").css("text-align", "center");
 
     function renderTags (xs) {
         return xs.map(function (x) { return "." + x;}).join("");
