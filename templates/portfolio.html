@@ -42,12 +42,14 @@
 <script type="text/javascript" src="./dist/isotope.js"></script>
 <script>
     var filters = [],
-    container = $$(".items").imagesLoaded(function () {
-        container.isotope({
+    $$items = $$(".items"),
+    hider = $$("#clear");
+
+    $$(".container").imagesLoaded(function () {
+        $$items.isotope({
             layoutMode: "fitRows"
         })
-    }),
-    hider = $$("#clear");
+    });
 
     hider.hide();
 
@@ -83,7 +85,7 @@
         } else if (i !== -1) {
             filters.splice(i,1);
         };
-        container.isotope({filter: renderTags(filters)});
+        $$items.isotope({filter: renderTags(filters)});
 
         if (filters.length > 0) {
             hider.show();
@@ -96,7 +98,7 @@
     $$("#clear").click(function () {
         $$(".tags > li").removeClass("active");
         filters = [];
-        container.isotope({filter: renderTags(filters)});
+        $$items.isotope({filter: renderTags(filters)});
         hider.hide();
         checkCategories();
     });
