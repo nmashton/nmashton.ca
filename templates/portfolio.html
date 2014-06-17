@@ -1,0 +1,104 @@
+<ul class="tags">
+    $for(tagslist)$
+    <li data-tag="$body$">$body$</li>
+    $endfor$
+    <span id="clear" class="hider active">(clear)</span>
+</ul>
+
+<h2 class="category professional">Professional</h2>
+
+<div class="row items">
+    $for(professional)$
+    <div class="item professional $tags-cat$">
+        <div class="thumbnail">
+            <a href="$link$"><img class="thumbnail" src="$thumb$"></a>
+            <div class="caption">
+                <h1><a href="$link$" class="thumbnail">$title$</a></h1>
+                <p>$body$</p>
+            </div>
+        </div>
+    </div>
+    $endfor$
+</div>
+
+<h2 class="category personal">Personal</h2>
+
+<div class="row items">
+    $for(personal)$
+    <div class="item personal $tags-cat$">
+        <div class="thumbnail">
+            <a href="$link$"><img class="thumbnail" src="$thumb$"></a>
+            <div class="caption">
+                <h1><a href="$link$" class="thumbnail">$title$</a></h1>
+                <p>$body$</p>
+            </div>
+        </div>
+    </div>
+    $endfor$
+</div>
+
+<script type="text/javascript" src="./dist/jquery.js"></script>
+<script type="text/javascript" src="./dist/imagesloaded.js"></script>
+<script type="text/javascript" src="./dist/isotope.js"></script>
+<script>
+    var filters = [],
+    container = $$(".items").imagesLoaded(function () {
+        container.isotope({
+            layoutMode: "fitRows"
+        })
+    }),
+    hider = $$("#clear");
+
+    hider.hide();
+
+    $$(".container").css("maxWidth",720);
+    $$(".row.items").css("text-align", "center");
+
+    function renderTags (xs) {
+        return xs.map(function (x) { return "." + x;}).join("");
+    };
+
+    function checkCategories () {
+        if ($$(".item.personal" + renderTags(filters)).length === 0) {
+            $$(".category.personal").hide();
+        } else {
+            $$(".category.personal").show();
+        };
+        if ($$(".item.professional" + renderTags(filters)).length === 0) {
+            $$(".category.professional").hide();
+        } else {
+            $$(".category.professional").show();
+        };
+    };
+
+    $$(".tags > li").click(function () {
+        var me = $$(this)
+            tag = me.attr("data-tag"),
+            i = filters.indexOf(tag);
+        me.toggleClass("active");
+        if (me.hasClass("active")) {
+            if (i === -1) {
+                filters.push(tag);
+            }
+        } else if (i !== -1) {
+            filters.splice(i,1);
+        };
+        container.isotope({filter: renderTags(filters)});
+
+        if (filters.length > 0) {
+            hider.show();
+        } else {
+            hider.hide();
+        };
+        checkCategories();
+    });
+
+    $$("#clear").click(function () {
+        $$(".tags > li").removeClass("active");
+        filters = [];
+        container.isotope({filter: renderTags(filters)});
+        hider.hide();
+        checkCategories();
+    });
+
+</script>

@@ -1,0 +1,13 @@
+<div class="row items">
+    $for(projects)$
+    <div class="item $tags-cat$">
+        <div class="thumbnail">
+            <a href="$link$"><img class="thumbnail" src="$thumb$"></a>
+            <div class="caption">
+                <h1><a href="$link$" class="thumbnail">$title$</a></h1>
+                <p>$body$</p>
+            </div>
+        </div>
+    </div>
+    $endfor$
+</div>

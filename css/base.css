@@ -1,0 +1,200 @@
+@charset "utf-8";
+
+header {
+    margin-bottom: 24px;
+}
+
+header > h1 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-left: -4px;
+}
+
+/* NAMU AMIDA BUTSU */
+.circle {
+  background-color: rgb(235,163,81);
+  height: 64px;
+  width: 64px;
+  position: relative;
+  left: 50%;
+  margin-left: -32px;
+  margin-bottom: 24.5px;
+  -moz-border-radius: 64px;
+  -webkit-border-radius: 64px;
+  border-radius: 64px;
+}
+
+.nav + .circle {
+    margin-top: -12.25px;
+}
+
+
+/* Draws on http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css */
+/* Customize container */
+.container {
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Space out content a bit */
+body {
+  font-family: Palatino, serif; 
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Headers */
+h1, h2 {
+/*    letter-spacing: -1px; */
+    line-height: 1em;
+    margin-top: 24.5px;
+    margin-bottom: 24.5px;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+.nav {
+    width: 100%;
+    padding: 0;
+    margin: 0px auto 0px auto;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 24.5px;
+}
+
+/* Body text and asides */
+p,li {
+    font-size: 18px;
+    text-align: left;
+    text-indent: 0;
+    line-height: 1.75em;
+    margin-bottom: 0em;
+    margin-top: 0em;
+}
+
+p + p,
+p + aside + p {
+    text-indent: 1.75em;
+}
+
+/* Navigation elements */ 
+.subnav {
+    margin-top: -12px;
+}
+
+.nav > li > a {
+    color: black;
+    font-weight: bold;
+}
+
+.nav > li {
+    font-size: 16px;
+    display: inline;
+    margin: 0 0.5em 0 0;
+}
+
+.nav > li + li:before {
+    content: "–";
+    margin: 0 0.55em 0 0;
+}
+
+/* Portfolio, filters list */
+
+.tags {
+    text-align: center;
+    width: 45%;
+    font-style: italic;
+    font-size: 12px;   
+    margin: 0 auto 0 auto;
+    padding: 0;
+    margin-bottom: 28px;
+}
+
+.tags > li {
+    display: inline;
+    font-size: 12px;  
+    margin: 0 0.5em 0 0;
+    cursor: pointer;
+}
+
+/* Portfolio item styling */
+
+.category {
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.items > .item {
+    width: 200px;
+    margin: 0 1em 0 1em;
+    border-top: 1px;
+    border-top-style: dotted;
+    border-top-color: rgb(235,163,81);
+}
+
+img.thumbnail {
+    margin: 1em auto 1em auto;
+    width: 160px;
+}
+
+.caption > h1 {
+    font-size: 14px;
+    margin-bottom: 0.5em;
+}
+
+h1 > a {
+    color: black;
+}
+
+.caption > p {
+    font-size: 12px;
+}
+
+/* Contacts page */
+
+footer > ul {
+    text-align: center;
+    margin-left: -2em;
+}
+
+footer > ul > li {
+    display: inline;
+    margin: 0 0.5em 0 0;
+    cursor: pointer;
+}
+
+/*
+.contact > ul > li + li:before {
+    content: "~";
+    margin: 0 0.55em 0 0;
+}
+*/
+
+/* "Other" text */
+ol {
+    width: 500px;
+}
+
+a {
+    color: #d59449;
+}
+
+.active {
+    color: #d59449;
+    cursor: pointer;
+}
+
+a:not(:hover) {
+    text-decoration: none;
+}
