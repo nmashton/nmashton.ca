@@ -1,8 +1,8 @@
 ---
 title: Budget Data Package uploader
-link: https://github.com/nmashton/bdp-uploader
+link: https://github.com/openspending/bdp-uploader
 thumb: ./images/portfolio/bdp-uploader-thumb.png
-github: https://github.com/nmashton/bdp-uploader
+github: https://github.com/openspending/bdp-uploader
 tags: python, flask, bootstrap
 ---
 
