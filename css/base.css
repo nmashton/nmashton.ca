@@ -130,6 +130,10 @@ p + aside + p {
 
 /* Portfolio item styling */
 
+.items {
+    visibility: hidden;
+}
+
 .category {
     text-align: center;
     margin-bottom: 1.5em;
@@ -141,6 +145,7 @@ p + aside + p {
     border-top: 1px;
     border-top-style: dotted;
     border-top-color: rgb(235,163,81);
+    float: left;
 }
 
 img.thumbnail {
