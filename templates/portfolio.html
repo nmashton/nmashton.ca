@@ -75,7 +75,7 @@
 
     $$(".tags > li").click(function () {
         var me = $$(this)
-            tag = me.attr("data-tag"),
+            tag = me.data("tag"),
             i = filters.indexOf(tag);
         me.toggleClass("active");
         if (me.hasClass("active")) {
